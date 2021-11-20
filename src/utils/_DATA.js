@@ -9,7 +9,7 @@ let users = {
       am8ehyc8byjqgar0jgpub9: "optionTwo",
       loxhs1bqm25b708cmbf3g: "optionTwo",
     },
-    questions: ["8xf0y6ziyjabvozdd253nd", "am8ehyc8byjqgar0jgpub9"],
+    questions: ["8xf0y6ziyjabvozdd253nd"],
   },
   tylermcginnis: {
     id: "tylermcginnis",
@@ -43,7 +43,7 @@ let users = {
       am8ehyc8byjqgar0jgpub9: "optionTwo",
       "8xf0y6ziyjabvozdd253nd": "optionTwo",
     },
-    questions: [],
+    questions: ["am8ehyc8byjqgar0jgpub9"],
   },
 };
 
@@ -76,7 +76,7 @@ let questions = {
   },
   am8ehyc8byjqgar0jgpub9: {
     id: "am8ehyc8byjqgar0jgpub9",
-    author: "sarahedo",
+    author: "hAbuMustafa",
     timestamp: 1488579767190,
     optionOne: {
       votes: [],

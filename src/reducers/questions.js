@@ -18,27 +18,11 @@ export default function questions(state = {}, action) {
         ...state,
         [action.answer.qid]: {
           ...state[action.answer.qid],
-          optionOne: {
-            ...state[action.answer.qid].optionOne,
-            votes:
-              action.answer.answer === "optionOne"
-                ? {
-                    ...state[action.answer.qid].optionOne.votes.concat([
-                      action.answer.authedUser,
-                    ]),
-                  }
-                : { ...state[action.answer.qid].optionOne.votes },
-          },
-          optionTwo: {
-            ...state[action.answer.qid].optionTwo,
-            votes:
-              action.answer.answer === "optionTwo"
-                ? {
-                    ...state[action.answer.qid].optionTwo.votes.concat([
-                      action.answer.authedUser,
-                    ]),
-                  }
-                : { ...state[action.answer.qid].optionTwo.votes },
+          [action.answer.answer]: {
+            ...state[action.answer.qid][action.answer.answer],
+            votes: state[action.answer.qid][action.answer.answer].votes.concat([
+              action.answer.authedUser,
+            ]),
           },
         },
       };

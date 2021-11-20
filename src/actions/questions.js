@@ -19,9 +19,9 @@ function addQuestion(question) {
 }
 
 export function handleAddQuestion(optionOneText, optionTwoText) {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
     const { authedUser } = getState();
-    return saveQuestion({
+    return await saveQuestion({
       author: authedUser,
       optionOneText,
       optionTwoText,
