@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/hAbuMustafa/reactnd-project-would-you-rather-starter"
+    "url": "https://github.com/hAbuMustafa/would-you-rather"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
