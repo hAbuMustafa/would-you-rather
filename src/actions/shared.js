@@ -3,7 +3,7 @@ import { storeQuestions } from "./questions";
 import { storeUsers } from "./users";
 import { setAuthedUser } from "./authedUser";
 
-const AUTHED_USER = "hAbuMustafa";
+const AUTHED_USER = "guest";
 
 export default function handleInitialData() {
   return async (dispatch) => {

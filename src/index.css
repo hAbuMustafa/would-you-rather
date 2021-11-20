@@ -79,3 +79,7 @@ h3.user-name {
 .nav li {
   margin-left: 20px;
 }
+
+a {
+  text-decoration: none;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleAddQuestion } from "../actions/questions";
 
@@ -6,6 +7,7 @@ class NewQuestion extends Component {
   state = {
     optionOne: "",
     optionTwo: "",
+    goHome: false,
   };
 
   handle1Change = (e) => {
@@ -31,10 +33,16 @@ class NewQuestion extends Component {
     this.setState(() => ({
       optionOne: "",
       optionTwo: "",
+      goHome: true,
     }));
   };
 
   render() {
+    const { goHome } = this.state;
+
+    if (goHome === true) {
+      return <Navigate to="/" replace />;
+    }
     return (
       <div className="container">
         <h1 className="fragment-header">Create New Question</h1>

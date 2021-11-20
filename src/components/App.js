@@ -19,18 +19,30 @@ class App extends Component {
         <Router>
           <Fragment>
             <div className="middle">
-              <NavBar />
-              {this.props.loading === true ? null : (
-                <Routes>
-                  <Route
-                    exact
-                    strict
-                    path="/leaderboard"
-                    element={<Leaderboard />}
-                  />
-                  <Route exact strict path="/" element={<Dashboard />} />
-                  <Route exact strict path="/add" element={<NewQuestion />} />
-                </Routes>
+              {this.props.loading ? null : (
+                <div>
+                  <NavBar />
+                  {this.props.authedUser === "guest" ? (
+                    <LoginForm />
+                  ) : (
+                    <Routes>
+                      <Route
+                        exact
+                        strict
+                        path="/leaderboard"
+                        element={<Leaderboard />}
+                      />
+                      <Route exact strict path="/" element={<Dashboard />} />
+                      <Route
+                        exact
+                        strict
+                        path="/add"
+                        element={<NewQuestion />}
+                      />
+                      <Route path="/questions/:qid" element={<Poll />} />
+                    </Routes>
+                  )}
+                </div>
               )}
             </div>
           </Fragment>
@@ -42,6 +54,7 @@ class App extends Component {
 
 function mapStateToProps({ authedUser }) {
   return {
+    authedUser,
     loading: authedUser === null,
   };
 }

@@ -23,26 +23,29 @@ class NavBar extends Component {
               Leaderboard
             </NavLink>
           </li>
-          <li
-            style={{
-              display: "inline-block",
-              position: "fixed",
-              right: "0px",
-              top: "0px",
-            }}
-          >
-            <span>Welcome, {users[authedUser].name}</span>
-            <img
-              src={users[authedUser].avatarURL}
-              alt={`Avatart of ${users[authedUser].name}`}
-              className="avatar"
+          {console.log(authedUser)}
+          {authedUser !== "guest" && (
+            <li
               style={{
-                height: "25px",
-                borderRadius: "12px",
-                verticalAlign: "middle",
+                display: "inline-block",
+                position: "right",
+                right: "0px",
+                top: "0px",
               }}
-            />
-          </li>
+            >
+              <span>Welcome, {users[authedUser].name}</span>
+              <img
+                src={users[authedUser].avatarURL}
+                alt={`Avatart of ${users[authedUser].name}`}
+                className="avatar"
+                style={{
+                  height: "25px",
+                  borderRadius: "12px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </li>
+          )}
         </ul>
       </nav>
     );

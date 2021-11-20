@@ -11,6 +11,7 @@ class LoginForm extends Component {
     e.preventDefault();
     this.setState(() => ({ value: e.target.value }));
     const { dispatch } = this.props;
+    dispatch(setAuthedUser(e.target.value));
     //TODO dispatch authedUser
   };
   render() {
