@@ -10,7 +10,6 @@ class Leaderboard extends Component {
         users[b].questions.length -
         (Object.keys(users[a].answers).length + users[a].questions.length)
     );
-    console.log(sortedUserIds);
     return (
       <div className="container">
         <ul className="list">

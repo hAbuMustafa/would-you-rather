@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   state = { value: "unanswered" };
@@ -69,22 +69,28 @@ class Dashboard extends Component {
             <ul className="list">
               {unAnsweredQuestions.map((qid) => (
                 <li key={qid}>
-                  {
-                    <div style={{ borderColor: "black", borderStyle: "solid" }}>
-                      <img
-                        src={users[questions[qid].author].avatarURL}
-                        alt={`Avatart of ${users[questions[qid].author].name}`}
-                        className="avatar"
-                        style={{ height: "50px", borderRadius: "25px" }}
-                      />
-                      <div style={{ display: "inline" }}>
-                        Would you rather... <br />
-                        <p style={{ fontSize: "12px", color: "gray" }}>
-                          ...{questions[qid].optionOne.text}...
-                        </p>
+                  <Link to={`/questions/${qid}`}>
+                    {
+                      <div
+                        style={{ borderColor: "black", borderStyle: "solid" }}
+                      >
+                        <img
+                          src={users[questions[qid].author].avatarURL}
+                          alt={`Avatart of ${
+                            users[questions[qid].author].name
+                          }`}
+                          className="avatar"
+                          style={{ height: "50px", borderRadius: "25px" }}
+                        />
+                        <div style={{ display: "inline" }}>
+                          Would you rather... <br />
+                          <p style={{ fontSize: "12px", color: "gray" }}>
+                            ...{questions[qid].optionOne.text}...
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  }
+                    }
+                  </Link>
                 </li>
               ))}
             </ul>

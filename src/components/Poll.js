@@ -8,7 +8,6 @@ function Poll(props) {
   const { qid } = useParams();
 
   const { users, questions, authedUser } = props;
-  console.log(props);
   const question = questions[qid];
 
   function handleChange(e) {

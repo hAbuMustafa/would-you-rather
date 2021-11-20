@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { setAuthedUser } from "../actions/authedUser";
 
 class NavBar extends Component {
   render() {
@@ -23,7 +24,6 @@ class NavBar extends Component {
               Leaderboard
             </NavLink>
           </li>
-          {console.log(authedUser)}
           {authedUser !== "guest" && (
             <li
               style={{
@@ -44,6 +44,12 @@ class NavBar extends Component {
                   verticalAlign: "middle",
                 }}
               />
+              <span
+                className="logout"
+                onClick={() => this.props.dispatch(setAuthedUser("guest"))}
+              >
+                Logout
+              </span>
             </li>
           )}
         </ul>
