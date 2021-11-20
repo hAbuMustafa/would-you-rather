@@ -62,3 +62,20 @@ h3.user-name {
   text-align: center;
   margin-left: 10px;
 }
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li {
+  margin-left: 20px;
+}

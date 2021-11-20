@@ -96,6 +96,7 @@ class Poll extends Component {
           <h3>Would you rather...</h3>
           <form onSubmit={this.handleSubmit}>
             <select value={this.state.value} onChange={this.handleChange}>
+              <option disabled>Pick your choice</option>
               <option value="optionOne">{question.optionOne.text}</option>
               <option value="optionTwo">{question.optionTwo.text}</option>
             </select>
